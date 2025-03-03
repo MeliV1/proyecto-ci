@@ -1,4 +1,4 @@
-import funciones import es_primo
+from funciones import es_primo
 
 def test_es_primo():
     assert es_primo(5) is True
