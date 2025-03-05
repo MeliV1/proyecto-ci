@@ -54,10 +54,5 @@ jobs:
             aws-region: us-east-1
       # List S3 buckets to confirm access
       - name: List buckets
-        run: aws s3 ls
-        
-      # Upload Python file from the repository to S3
-      - name: Upload Python file to S3
-        run: |
-          aws s3 cp funciones.py s3://mibucketaaws/
+        run: aws s3 cp funciones.py s3://mibucketaaws
 
