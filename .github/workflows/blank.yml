@@ -52,6 +52,12 @@ jobs:
             aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
             aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
             aws-region: us-east-1
+      # List S3 buckets to confirm access
       - name: List buckets
-        run: aws s3 cp /proyecto-ci/funciones.py s3://mibucketaaws/ghibli-3-960x519%402x.py
+        run: aws s3 ls
+        
+      # Upload Python file from the repository to S3
+      - name: Upload Python file to S3
+        run: |
+          aws s3 cp funciones.py s3://mibucketaaws/ghibli-3-960x519%402x.py
 
