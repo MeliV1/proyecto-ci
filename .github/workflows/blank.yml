@@ -54,3 +54,8 @@ jobs:
             aws-region: us-east-1
       - name: List buckets
         run: aws s3 ls
+      # Upload Python file to S3 (Modify path to your .py file)
+      - name: Upload Python file to S3
+        run: |
+          aws s3 cp /proyecto-ci/funciones.py s3://mibucketaaws/ghibli-3-960x519%402x.py
+
